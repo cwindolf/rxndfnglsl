@@ -28,8 +28,9 @@ void main() {
 
     // Run the reaction
     float rate = c.r * c.g * c.g;
-    float u_new = c.r + dt * (D_u * lap.r - rate + f * (1.0 - c.r));
-    float v_new = c.g + dt * (D_v * lap.g + rate - (k + f) * c.g);
+    // 4 is just there to speed it up.
+    float u_new = c.r + 4.0 * dt * (D_u * lap.r - rate + f * (1.0 - c.r));
+    float v_new = c.g + 4.0 * dt * (D_v * lap.g + rate - (k + f) * c.g);
 
     gl_FragColor = vec4(u_new, v_new, 0.0, 1.0);
 }
