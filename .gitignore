@@ -1,0 +1,8 @@
+*.html
+*.pyc
+*.pyo
+three*.js
+perlin.js
+Detector.js
+*Controls.js
+*Renderer.js
